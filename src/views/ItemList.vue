@@ -13,7 +13,7 @@
     <div class="news-list-nav">
       <router-link v-if="hasMore" :to="'/' + type + '/' + (page + 1)">More</router-link>
       <a v-else class="disabled">More</a>
-      <span>( {{ page }}/{{ maxPage }} )</span>
+      <span class="subtext"> &nbsp; {{ page }} / {{ maxPage }}</span>
     </div>
   </div>
 </template>
@@ -112,10 +112,7 @@ export default {
 <style lang="stylus">
 
 .news-list-nav
-  a
-    margin 0 1em
-  .disabled
-    color #ccc
+  padding 20px
 
 .news-list
   transition all .1s cubic-bezier(.55,0,.1,1)

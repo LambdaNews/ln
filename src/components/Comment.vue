@@ -3,18 +3,20 @@
     <div class="by">
       <router-link :to="'/user/' + comment.by">{{ comment.by }}</router-link>
       {{ comment.time | timeAgo }} ago
-    </div>
-    <div class="text" v-html="comment.text"></div>
-    <div class="toggle" :class="{ open }" v-if="comment.kids && comment.kids.length">
-      <a @click="open = !open">{{
-        open
+      <span class="toggle" :class="{ open }">
+        <a @click="open = !open">{{
+          open
             ? '[-]'
-            : '[+] ' + pluralize(comment.kids.length) + ' collapsed'
-      }}</a>
+            : '[+]'
+          }}</a>
+      </span>
     </div>
-    <ul class="comment-children" v-show="open">
-      <comment v-for="id in comment.kids" :key="id" :id="id"></comment>
-    </ul>
+    <div v-show="open">
+      <div class="text" v-html="comment.text"></div>
+      <ul class="comment-children">
+        <comment v-for="id in comment.kids" :key="id" :id="id"></comment>
+      </ul>
+    </div>
   </li>
 </template>
 
@@ -44,7 +46,6 @@ export default {
     margin-left 1.5em
 
 .comment
-  border-top 1px solid #eee
   position relative
   .by, .text, .toggle
     font-size .9em

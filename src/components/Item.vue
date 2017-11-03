@@ -45,12 +45,6 @@ export default {
 }
 </script>
 
-<style>
-  a:link    { color:#000000; text-decoration:none; }
-  a:visited { color:#000000; text-decoration:none; }
-  .item-title   { font-family:Verdana, Geneva, sans-serif; font-size: 10pt; color:#828282; }
-</style>
-
 <style lang="stylus">
 .news-item
   padding-top 5px
@@ -58,12 +52,4 @@ export default {
   .rank
     width 36px
     margin 0
-  .subtext, .host
-    font-size 7pt
-    color #828282
-    a
-      color #828282
-      &:hover
-        color #ff6600
-        text-decoration underline
 </style>

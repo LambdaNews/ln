@@ -28,6 +28,9 @@
 <style>
   body  { font-family:Verdana, Geneva, sans-serif; font-size:10pt; color:#828282; }
   .pagetop { font-family:Verdana, Geneva, sans-serif; font-size: 10pt; color:#222222; }
+  a:link    { color:#000000; text-decoration:none; }
+  a:visited { color:#000000; text-decoration:none; }
+  .item-title   { font-family:Verdana, Geneva, sans-serif; font-size: 10pt; color:#828282; }
 </style>
 
 <style lang="stylus">
@@ -50,7 +53,7 @@
 
   body
     padding 8px
-    line-height normal
+    line-height auto
 
   #hnmain
     width 85%
@@ -64,7 +67,6 @@
       border 1px white solid
       vertical-align text-bottom
     a
-      color rgba(255, 255, 255, .8)
       transition color .1s ease
       display inline-block
       vertical-align middle
@@ -75,6 +77,15 @@
     .github
       color #fff
       font-size .9em
+
+  .subtext, .host
+    font-size 7pt
+    color #828282
+    a
+      color #828282
+      &:hover
+        color #ff6600
+        text-decoration underline
 
   .router-view
     background-color #f6f6ef
