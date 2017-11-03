@@ -1,15 +1,17 @@
 <template>
   <div id="hnmain" class="container">
-    <nav class="level pagetop">
+    <nav class="level is-mobile pagetop">
       <div class="level-left">
         <router-link class="level-item" to="/" exact>
           <img class="logo" src="~public/y18.gif" alt="logo">
         </router-link>
         <router-link class="level-item" to="/top"><strong>Hacker News</strong></router-link>
-        <router-link class="level-item" to="/new">new</router-link>
-        <span class="bar">|</span><router-link class="level-item" to="/show">show</router-link>
-        <span class="bar">|</span><router-link class="level-item" to="/ask">ask</router-link>
-        <span class="bar">|</span><router-link class="level-item" to="/job">jobs</router-link>
+        <div class="level-left">
+          <router-link class="level-item" to="/new">new</router-link>
+          <span class="bar">|</span><router-link class="level-item" to="/show">show</router-link>
+          <span class="bar">|</span><router-link class="level-item" to="/ask">ask</router-link>
+          <span class="bar">|</span><router-link class="level-item" to="/job">jobs</router-link>
+        </div>
       </div>
       <div class="level-right">
         <a class="github level-item" href="https://github.com/shawwn/vue-hackernews-2.0" target="_blank" rel="noopener">
@@ -29,7 +31,6 @@
 </style>
 
 <style lang="stylus">
-
 a
   color #34495e
   text-decoration none
@@ -79,17 +80,14 @@ body
 
 .fade-enter, .fade-leave-active
   opacity 0
+</style>
 
-/*@media (max-width 860px)*/
-  /*.header .inner*/
-    /*padding 15px 30px*/
-
-/*@media (max-width 600px)*/
-  /*.header*/
-    /*.inner*/
-      /*padding 15px*/
-    /*a*/
-      /*margin-right 1em*/
-    /*.github*/
-      /*display none*/
+<style>
+  @media only screen
+  and (min-width : 300px)
+  and (max-width : 750px)
+  {
+    body { padding: 0px; }
+    #hnmain { width: 100%; }
+  }
 </style>
