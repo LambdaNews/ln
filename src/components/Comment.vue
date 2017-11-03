@@ -47,8 +47,11 @@ export default {
 
 .comment
   position relative
-  .by, .text, .toggle
-    font-size .9em
+  max-width 1215px
+  p
+    margin-top 8px
+  .by, .toggle
+    font-size 10px
     margin 1em 0
   .by
     color #828282
@@ -56,6 +59,7 @@ export default {
       color #828282
       text-decoration underline
   .text
+    font-size 12px
     overflow-wrap break-word
     a:hover
       color #ff6600

@@ -53,7 +53,7 @@
 
   body
     padding 8px
-    line-height auto
+    line-height normal
 
   #hnmain
     width 85%
