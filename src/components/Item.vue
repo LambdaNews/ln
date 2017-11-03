@@ -48,7 +48,7 @@ export default {
 <style lang="stylus">
 .news-item
   //background-color #fff
-  padding 20px 30px 20px 80px
+  padding 5px 30px 5px 80px
   border-bottom 1px solid #eee
   position relative
   line-height 20px
