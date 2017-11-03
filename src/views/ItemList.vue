@@ -1,5 +1,5 @@
 <template>
-  <div class="news-view">
+  <div class="news-view container">
     <transition :name="transition">
       <div class="news-list" :key="displayedPage" v-if="displayedPage > 0">
         <transition-group tag="ul" name="item">
