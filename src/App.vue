@@ -87,6 +87,10 @@
         color #ff6600
         text-decoration underline
 
+  .text
+    a
+      text-decoration underline
+
   .router-view
     background-color #f6f6ef
     position relative
