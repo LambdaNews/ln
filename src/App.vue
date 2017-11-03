@@ -32,6 +32,9 @@
 
 <style lang="stylus">
 
+  html
+    -webkit-font-smoothing auto
+
   .level
     margin 0px !important
 
@@ -45,11 +48,12 @@
     color #34495e
     text-decoration none
 
-  #hnmain
-    width 85%
-
   body
     padding 8px
+    line-height normal
+
+  #hnmain
+    width 85%
 
   .pagetop
     background-color #9abfed
