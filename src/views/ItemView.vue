@@ -3,22 +3,20 @@
     <template v-if="item">
       <div class="item-view-header">
         <a :href="item.url" target="_blank">
-          <h1>{{ item.title }}</h1>
+          {{ item.title }}
         </a>
         <span v-if="item.url" class="host">
           ({{ item.url | host }})
         </span>
-        <p class="meta">
-          {{ item.score }} points
-          | by <router-link :to="'/user/' + item.by">{{ item.by }}</router-link>
-          {{ item.time | timeAgo }} ago
+        <p class="subtext">
+          {{ item.score }} points by <router-link :to="'/user/' + item.by">{{ item.by }}</router-link>
+          {{ item.time | timeAgo }} ago | {{ item.descendants + ' comments' }}
         </p>
       </div>
       <div class="item-view-comments">
-        <p class="item-view-comments-header">
-          {{ item.kids ? item.descendants + ' comments' : 'No comments yet.' }}
+        <span class="item-view-comments-header">
           <spinner :show="loading"></spinner>
-        </p>
+        </span>
         <ul v-if="!loading" class="comment-children">
           <comment v-for="id in item.kids" :key="id" :id="id"></comment>
         </ul>
@@ -115,10 +113,9 @@ function fetchComments (store, item) {
   margin 0
   font-size 1.1em
   padding 1em 0
-  position relative
   .spinner
-    display inline-block
-    margin -15px 0
+    position absolute
+    margin -25px 15px 0
 
 .comment-children
   list-style-type none
