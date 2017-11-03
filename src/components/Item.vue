@@ -7,7 +7,7 @@
       <div class="media-content">
         <span class="item-title">
           <template v-if="item.url">
-            <a :href="item.url" target="_blank" rel="noopener">{{ item.title }}</a>
+            <a :href="item.url">{{ item.title }}</a>
             <span class="host"> ({{ item.url | host }})</span>
           </template>
           <template v-else>
