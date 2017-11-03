@@ -86,8 +86,6 @@ export default {
 
   methods: {
     itemRank (item, index) {
-//      this.computed.page()
-//      const { itemsPerPage, lists } = this.$store.state
       return (this.page - 1) * this.itemsPerPage + (index + 1)
     },
     loadItems (to = this.page, from = -1) {
