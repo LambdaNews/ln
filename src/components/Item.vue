@@ -51,7 +51,7 @@ export default {
   padding 5px 30px 5px 80px
   border-bottom 1px solid #eee
   position relative
-  line-height 20px
+  //line-height 20px
   .score
     color #ff6600
     font-size 1.1em
