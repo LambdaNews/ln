@@ -3,8 +3,10 @@
     <transition :name="transition">
       <div class="news-list" :key="displayedPage" v-if="displayedPage > 0">
         <transition-group tag="ul" name="item">
-          <item v-for="item in displayedItems" :key="item.id" :item="item">
-          </item>
+          <div v-for="(item, index) in displayedItems" :key="item.id">
+            <item :item="item" :rank="itemRank(item, index)">
+            </item>
+          </div>
         </transition-group>
       </div>
     </transition>
@@ -43,9 +45,16 @@ export default {
     page () {
       return Number(this.$route.params.page) || 1
     },
+    itemsPerPage () {
+      const { itemsPerPage } = this.$store.state
+      return itemsPerPage;
+    },
+    itemsCount () {
+      const { lists } = this.$store.state
+      return lists[this.type].length;
+    },
     maxPage () {
-      const { itemsPerPage, lists } = this.$store.state
-      return Math.ceil(lists[this.type].length / itemsPerPage)
+      return Math.ceil(this.itemsCount / this.itemsPerPage)
     },
     hasMore () {
       return this.page < this.maxPage
@@ -76,6 +85,11 @@ export default {
   },
 
   methods: {
+    itemRank (item, index) {
+//      this.computed.page()
+//      const { itemsPerPage, lists } = this.$store.state
+      return (this.page - 1) * this.itemsPerPage + (index + 1)
+    },
     loadItems (to = this.page, from = -1) {
       this.$bar.start()
       this.$store.dispatch('FETCH_LIST_DATA', {
