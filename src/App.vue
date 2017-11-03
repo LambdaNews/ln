@@ -45,7 +45,7 @@ a
   .inner
     max-width 800px
     box-sizing border-box
-    padding 15px 5px
+    padding 2px 5px
   a
     color rgba(255, 255, 255, .8)
     line-height 24px
