@@ -45,7 +45,6 @@ a
   .inner
     max-width 800px
     box-sizing border-box
-    margin 0px auto
     padding 15px 5px
   a
     color rgba(255, 255, 255, .8)
@@ -79,7 +78,6 @@ a
 .router-view
   background-color #f6f6ef
   width 85%
-  margin 0 auto
   position relative
 
 .fade-enter-active, .fade-leave-active
