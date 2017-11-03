@@ -31,55 +31,56 @@
 </style>
 
 <style lang="stylus">
-a
-  color #34495e
-  text-decoration none
 
-#hnmain
-  width 85%
+  .level
+    margin 0px !important
 
-body
-  padding 8px
+  .level-item
+    margin-bottom 0 !important
+    margin-top 0 !important
+    margin-left 0.3em !important
+    margin-right 0.3em !important
 
-.level
-  margin 0px !important
-
-.level-item
-  margin-bottom 0 !important
-  margin-top 0 !important
-  margin-left 0.3em !important
-  margin-right 0.3em !important
-
-.pagetop
-  background-color #9abfed
-  padding 2px
-  .logo
-    width 18px
-    height 18px
-    border 1px white solid
-    vertical-align text-bottom
   a
-    color rgba(255, 255, 255, .8)
-    transition color .1s ease
-    display inline-block
-    vertical-align middle
-    &:hover
+    color #34495e
+    text-decoration none
+
+  #hnmain
+    width 85%
+
+  body
+    padding 8px
+
+  .pagetop
+    background-color #9abfed
+    padding 2px
+    .logo
+      width 18px
+      height 18px
+      border 1px white solid
+      vertical-align text-bottom
+    a
+      color rgba(255, 255, 255, .8)
+      transition color .1s ease
+      display inline-block
+      vertical-align middle
+      &:hover
+        color #fff
+      &.router-link-active
+        color #fff
+    .github
       color #fff
-    &.router-link-active
-      color #fff
-  .github
-    color #fff
-    font-size .9em
+      font-size .9em
 
-.router-view
-  background-color #f6f6ef
-  position relative
+  .router-view
+    background-color #f6f6ef
+    position relative
 
-.fade-enter-active, .fade-leave-active
-  transition all .1s ease
+  .fade-enter-active, .fade-leave-active
+    transition all .1s ease
 
-.fade-enter, .fade-leave-active
-  opacity 0
+  .fade-enter, .fade-leave-active
+    opacity 0
 </style>
 
 <style>
