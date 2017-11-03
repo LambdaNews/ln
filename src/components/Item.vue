@@ -1,7 +1,7 @@
 <template>
   <li class="news-item">
     <span class="score">{{ item.score }}</span>
-    <span class="title">
+    <span class="item-title">
       <template v-if="item.url">
         <a :href="item.url" target="_blank" rel="noopener">{{ item.title }}</a>
         <span class="host"> ({{ item.url | host }})</span>
@@ -39,9 +39,15 @@ export default {
 }
 </script>
 
+<style>
+  a:link    { color:#000000; text-decoration:none; }
+  a:visited { color:#000000; text-decoration:none; }
+  .item-title   { font-family:Verdana, Geneva, sans-serif; font-size: 10pt; color:#828282; }
+</style>
+
 <style lang="stylus">
 .news-item
-  background-color #fff
+  //background-color #fff
   padding 20px 30px 20px 80px
   border-bottom 1px solid #eee
   position relative

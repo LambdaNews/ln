@@ -1,11 +1,11 @@
 <template>
   <div id="app">
-    <header class="header">
+    <header class="header container">
       <nav class="inner">
         <router-link to="/" exact>
-          <img class="logo" src="~public/logo-48.png" alt="logo">
+          <img class="logo" src="~public/y18.gif" alt="logo">
         </router-link>
-        <router-link to="/top">Top</router-link>
+        <router-link to="/top"><strong>Hacker News</strong></router-link>
         <router-link to="/new">New</router-link>
         <router-link to="/show">Show</router-link>
         <router-link to="/ask">Ask</router-link>
@@ -16,19 +16,18 @@
       </nav>
     </header>
     <transition name="fade" mode="out-in">
-      <router-view class="view"></router-view>
+      <router-view class="router-view"></router-view>
     </transition>
   </div>
 </template>
 
+<style>
+  body  { font-family:Verdana, Geneva, sans-serif; font-size:10pt; color:#828282; }
+</style>
+
 <style lang="stylus">
 body
-  font-family -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-  font-size 15px
-  background-color lighten(#eceef1, 30%)
-  margin 0
-  padding-top 55px
-  color #34495e
+  padding-top 10px
   overflow-y scroll
 
 a
@@ -37,9 +36,9 @@ a
 
 .header
   background-color #9abfed
-  position fixed
+  //position fixed
+  width 85%
   z-index 999
-  height 55px
   top 0
   left 0
   right 0
@@ -71,13 +70,15 @@ a
     float right
 
 .logo
-  width 24px
-  margin-right 10px
+  width 18px
+  height 18px
+  border 1px white solid
   display inline-block
-  vertical-align middle
+  //vertical-align middle
 
-.view
-  max-width 800px
+.router-view
+  background-color #f6f6ef
+  width 85%
   margin 0 auto
   position relative
 
