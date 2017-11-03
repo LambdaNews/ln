@@ -8,10 +8,15 @@
         <span v-if="item.url" class="host">
           ({{ item.url | host }})
         </span>
-        <p class="subtext">
+        <br>
+        <span class="subtext">
           {{ item.score }} points by <router-link :to="'/user/' + item.by">{{ item.by }}</router-link>
           {{ item.time | timeAgo }} ago | {{ item.descendants + ' comments' }}
-        </p>
+        </span>
+        <div :show="item.text" class="selftext">
+          <span v-html="item.text">
+          </span>
+        </div>
       </div>
       <div class="item-view-comments">
         <span class="item-view-comments-header">
@@ -93,7 +98,7 @@ function fetchComments (store, item) {
 <style lang="stylus">
 .item-view-header
   //background-color #fff
-  padding 1.8em 2em 1em
+  padding 1em 2em 1em
   h1
     display inline
     font-size 1.5em

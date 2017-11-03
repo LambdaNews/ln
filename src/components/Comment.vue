@@ -1,6 +1,6 @@
 <template>
   <li v-if="comment" class="comment">
-    <div class="by">
+    <div class="comhead">
       <router-link :to="'/user/' + comment.by">{{ comment.by }}</router-link>
       {{ comment.time | timeAgo }} ago
       <span class="toggle" :class="{ open }">
@@ -49,14 +49,13 @@ export default {
     margin-left 1.5em
 
 .comment
+  padding 1px
   position relative
   max-width 1215px
-  p
-    margin-bottom 8px
-  .by, .toggle
+  .comhead, .toggle
     font-size 10px
-    margin 1em 0
-  .by
+    margin 5px 0 5px 0
+  .comhead
     color #828282
     a
       color #828282

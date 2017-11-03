@@ -91,6 +91,15 @@
     a
       text-decoration underline
 
+  p
+    margin-top 8px
+
+  .selftext
+    margin-top 10px
+    p
+      margin-top 13px
+      margin-bottom 13px
+
   .reply
     margin-bottom 5px
     margin-top 5px
