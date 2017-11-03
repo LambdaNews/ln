@@ -48,7 +48,7 @@
     margin-right 0.3em !important
 
   a
-    color #34495e
+    color #000000
     text-decoration none
 
   body
@@ -90,6 +90,10 @@
   .text
     a
       text-decoration underline
+
+  .reply
+    margin-bottom 5px
+    margin-top 5px
 
   .router-view
     background-color #f6f6ef

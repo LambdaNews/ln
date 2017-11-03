@@ -112,7 +112,7 @@ function fetchComments (store, item) {
 .item-view-comments-header
   margin 0
   font-size 1.1em
-  padding 1em 0
+  padding 0
   .spinner
     position absolute
     margin -25px 15px 0

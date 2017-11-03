@@ -13,6 +13,9 @@
     </div>
     <div v-show="open">
       <div class="text" v-html="comment.text"></div>
+      <div class="text reply" style="font-size:10px">
+        <a>reply</a>
+      </div>
       <ul class="comment-children">
         <comment v-for="id in comment.kids" :key="id" :id="id"></comment>
       </ul>
@@ -49,7 +52,7 @@ export default {
   position relative
   max-width 1215px
   p
-    margin-top 8px
+    margin-bottom 8px
   .by, .toggle
     font-size 10px
     margin 1em 0
@@ -57,7 +60,7 @@ export default {
     color #828282
     a
       color #828282
-      text-decoration underline
+      text-decoration none
   .text
     font-size 12px
     overflow-wrap break-word
