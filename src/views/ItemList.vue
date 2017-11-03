@@ -100,9 +100,6 @@ export default {
 </script>
 
 <style lang="stylus">
-.news-view
-  padding-top 1px
-
 .news-list-nav, .news-list
   //background-color #fff
   border-radius 2px
@@ -151,7 +148,4 @@ export default {
   opacity 0
   transform translate(30px, 0)
 
-@media (max-width 600px)
-  .news-list
-    margin 10px 0
 </style>
