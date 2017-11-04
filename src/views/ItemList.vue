@@ -11,7 +11,7 @@
       </div>
     </transition>
     <div class="news-list-nav">
-      <router-link v-if="hasMore" :to="'/' + type + '/' + (page + 1)">More</router-link>
+      <router-link v-if="hasMore" :to="'/' + url + '/' + (page + 1)">More</router-link>
       <a v-else class="disabled">More</a>
       <span class="subtext"> &nbsp; {{ page }} / {{ maxPage }}</span>
     </div>
@@ -30,7 +30,8 @@ export default {
   },
 
   props: {
-    type: String
+    type: String,
+    url: String
   },
 
   data () {
@@ -94,7 +95,7 @@ export default {
         type: this.type
       }).then(() => {
         if (this.page < 0 || this.page > this.maxPage) {
-          this.$router.replace(`/${this.type}/1`)
+          this.$router.replace(`/${this.url}/1`)
           return
         }
         this.transition = from === -1

@@ -56,7 +56,7 @@ if (process.env.NODE_ENV === 'production') {
           handler: 'networkFirst'
         },
         {
-          urlPattern: /\/(top|new|show|ask|jobs)/,
+          urlPattern: /\/(news|new|show|ask|jobs)/,
           handler: 'networkFirst'
         },
         {
