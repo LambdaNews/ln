@@ -1,15 +1,23 @@
-import Vue from 'vue'
+//import Vue from 'vue'
+import Vue from 'vue/dist/vue.esm.js';
+import Vue2 from 'vue';
 import 'es6-promise/auto'
 import { createApp } from './app'
 import ProgressBar from './components/ProgressBar.vue'
 
 // global progress bar
-const bar = Vue.prototype.$bar = new Vue(ProgressBar).$mount()
-document.body.appendChild(bar.$el)
+const bar = Vue2.prototype.$bar = new Vue2(ProgressBar).$mount();
+const hnbar = document.getElementById('hnbar');
+while (hnbar.firstChild) {
+  hnbar.removeChild(hnbar.firstChild);
+}
+hnbar.appendChild(bar.$el);
+//document.body.appendChild(bar.$el)
 
 // a global mixin that calls `asyncData` when a route component's params change
 Vue.mixin({
   beforeRouteUpdate (to, from, next) {
+    console.log('beforeRouteUpdate');
     const { asyncData } = this.$options
     if (asyncData) {
       asyncData({
@@ -21,6 +29,10 @@ Vue.mixin({
     }
   }
 })
+//
+// new Vue({
+//   el: '#app'
+// });
 
 const { app, router, store } = createApp()
 

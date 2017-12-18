@@ -45,23 +45,30 @@ export default {
   computed: {
     item () {
       return this.$store.state.items[this.$route.params.id]
-    }
+    },
   },
 
   // We only fetch the item itself before entering the view, because
   // it might take a long time to load threads with hundreds of comments
   // due to how the HN Firebase API works.
   asyncData ({ store, route: { params: { id }}}) {
+    console.log('asyncData')
     return store.dispatch('FETCH_ITEMS', { ids: [id] })
   },
 
   title () {
-    return this.item.title
+    return this.item && this.item.title || 'unknown-title'
   },
 
   // Fetch comments when mounted on the client
   beforeMount () {
-    this.fetchComments()
+    const id = this.$route.params.id
+    if (id && !this.$store.state.items[id]) {
+      console.log(['fetching', this.$route.params.id]);
+      return this.$store.dispatch('FETCH_ITEMS', { ids: [id] }).then(() => this.fetchComments());
+    } else {
+      this.fetchComments()
+    }
   },
 
   // refetch comments if item changed
@@ -72,6 +79,7 @@ export default {
   methods: {
     fetchComments () {
       if (!this.item || !this.item.kids) {
+        this.loading = false
         return
       }
 

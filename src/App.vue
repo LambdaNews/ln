@@ -3,7 +3,8 @@
     <nav class="level is-mobile pagetop">
       <div class="level-left">
         <router-link class="level-item" to="/" exact>
-          <img class="logo" src="~public/y18.gif" alt="logo">
+
+          <img class="logo" src="../public/y18.gif" alt="logo">
         </router-link>
         <router-link class="level-item" to="/news"><strong>Hacker News</strong></router-link>
         <div class="level-left">
