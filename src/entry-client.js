@@ -74,7 +74,7 @@ router.onReady(() => {
   app.$mount('#hnmain')
 })
 
-// service worker
-if ('https:' === location.protocol && navigator.serviceWorker) {
-  navigator.serviceWorker.register('/service-worker.js')
-}
+// // service worker
+// if ('https:' === location.protocol && navigator.serviceWorker) {
+//   navigator.serviceWorker.register('../build/service-worker.js', { scope: './' })
+// }
