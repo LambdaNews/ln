@@ -4,6 +4,7 @@
   "author": "Evan You <yyx990803@gmail.com>",
   "private": true,
   "scripts": {
+    "setup": "yarn && cd node_modules/parcel-bundler && yarn",
     "dev": "parcel index.html",
     "start": "cross-env NODE_ENV=production node server",
     "build": "rimraf dist .cache && yarn build:client",
