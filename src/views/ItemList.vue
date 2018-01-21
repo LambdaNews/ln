@@ -111,6 +111,8 @@ export default {
 </script>
 
 <style lang="stylus">
+.news-view
+  width 100%
 
 .news-list-nav
   padding 20px
