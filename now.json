@@ -1,0 +1,14 @@
+{
+  "alias": "for",
+  "files": [
+    "dist",
+    "src",
+    "server.js",
+    "manifest.json",
+    "public",
+    "build"
+  ],
+  "env": {
+    "NODE_ENV": "production"
+  }
+}

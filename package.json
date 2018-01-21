@@ -5,11 +5,14 @@
   "private": true,
   "scripts": {
     "setup": "yarn && cd node_modules/parcel-bundler && yarn",
+    "clean": "rimraf dist .cache",
     "dev": "parcel index.html",
-    "start": "cross-env NODE_ENV=production node server",
-    "build": "rimraf dist .cache && yarn build:client",
-    "build:client": "parcel build index.html --no-minify --public-url=./",
-    "deploy": "yarn build && cd dist && now --public"
+    "start": "ls && cross-env NODE_ENV=production node server.js",
+    "rebuild": "yarn clean && yarn build",
+    "bundle": "parcel build index.html --no-minify",
+    "build:client": "cross-env NODE_ENV=production webpack --config build/webpack.client.config.js --progress --hide-modules",
+    "build:server": "cross-env NODE_ENV=production webpack --config build/webpack.server.config.js --progress --hide-modules",
+    "deploy": "yarn bundle && now --public"
   },
   "engines": {
     "node": ">=7.0",
@@ -44,7 +47,9 @@
     "url-loader": "^0.5.9",
     "vue": "^2.5.13",
     "vue-component-compiler": "https://github.com/shawwn/vue-component-compiler#parcel-vue-component-compiler",
+    "vue-loader": "^13.7.0",
     "vue-router": "^3.0.1",
+    "vue-server-renderer": "^2.5.13",
     "vue-template-compiler": "^2.5.13",
     "vuex": "^3.0.1",
     "vuex-router-sync": "^5.0.0",

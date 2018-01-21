@@ -76,5 +76,5 @@ router.onReady(() => {
 
 // // service worker
 // if ('https:' === location.protocol && navigator.serviceWorker) {
-//   navigator.serviceWorker.register('../build/service-worker.js', { scope: './' })
+//   navigator.serviceWorker.register('../dist/service-worker.js')
 // }
