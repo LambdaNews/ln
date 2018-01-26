@@ -6,7 +6,7 @@
 
           <img class="logo" src="../public/y18.gif" alt="logo">
         </router-link>
-        <router-link class="level-item" to="/news"><strong>Hacker News</strong></router-link>
+        <router-link class="level-item" to="/news"><strong>Lambda News</strong></router-link>
         <div class="level-left">
           <router-link class="level-item" to="/new">new</router-link>
           <span class="bar">|</span><router-link class="level-item" to="/show">show</router-link>

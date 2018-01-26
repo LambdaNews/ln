@@ -11,7 +11,7 @@ const serverTitleMixin = {
   created () {
     const title = getTitle(this)
     if (title) {
-      this.$ssrContext.title = `${title} | Vue News`
+      this.$ssrContext.title = `${title} | Lambda News`
     }
   }
 }
@@ -20,7 +20,7 @@ const clientTitleMixin = {
   mounted () {
     const title = getTitle(this)
     if (title) {
-      document.title = `${title} | Vue News`
+      document.title = `${title} | Lambda News`
     }
   }
 }
