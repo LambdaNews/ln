@@ -15,8 +15,8 @@
         </div>
       </div>
       <div class="level-right">
-        <a class="github level-item" href="https://github.com/shawwn/vue-hackernews-2.0">
-          Built with Vue.js
+        <a class="github level-item" href="https://github.com/LambdaNews/ln">
+          Built with Vue.js + Parcel
         </a>
       </div>
     </nav>
