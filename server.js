@@ -65,6 +65,7 @@ const serve = (path, cache) => express.static(resolve(path), {
   maxAge: 0
 })
 
+app.set('etag', false);
 app.use(compression({ threshold: 0 }))
 app.use(favicon('./public/logo-48.png'))
 app.use('/dist', serve('./dist', true))
